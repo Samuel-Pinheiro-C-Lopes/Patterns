@@ -22,26 +22,15 @@ public class Cannon implements Tower {
 	}
 
 	@Override
-	public Integer getX() {
-		return this.x;
+	public Cannon clone() {
+		return new Cannon(this);
 	}
 	
-	@Override
-	public Integer getY() {
-		return this.y;
-	}
-
 	@Override
 	public void attack(Minion minion) {
 		minion.takeDamage(this.damage);
 	}
-	
-	@Override
-	public Cannon clone() {
-		return new Cannon(this);
-	}
 
-	// attacks the column 
 	@Override
 	public void act(GameEntity[][] mapEntities, Player player) {
 		try {
@@ -61,5 +50,15 @@ public class Cannon implements Tower {
 	@Override
 	public Boolean getIsAlly() {
 		return Boolean.TRUE;
+	}
+	
+	@Override
+	public Integer getX() {
+		return this.x;
+	}
+	
+	@Override
+	public Integer getY() {
+		return this.y;
 	}
 }

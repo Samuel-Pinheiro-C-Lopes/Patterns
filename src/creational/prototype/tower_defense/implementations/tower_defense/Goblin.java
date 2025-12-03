@@ -28,16 +28,12 @@ public class Goblin implements Minion {
 	public Goblin(Goblin goblin) {
 		this(goblin.health, goblin.damage, goblin.paths);
 	}
-
-	@Override
-	public Integer getX() {
-		return this.x;
-	}
 	
 	@Override
-	public Integer getY() {
-		return this.y;
+	public Goblin clone() {
+		return new Goblin(this);
 	}
+
 	
 	@Override
 	public void move(Integer x, Integer y) {
@@ -45,17 +41,6 @@ public class Goblin implements Minion {
 		this.y = y;
 	}
 
-	@Override
-	public void takeDamage(Integer damage) {
-		this.health -= damage;
-	}
-	
-	@Override
-	public Goblin clone() {
-		return new Goblin(this);
-	}
-	
-	// simply walk forward and deals damage to the player if it's one goal
 	@Override
 	public void act(GameEntity[][] mapEntities, Player player) {
 		try {
@@ -68,7 +53,7 @@ public class Goblin implements Minion {
 			
 			if (this.currentPathIndex == null) {
 				currentPath = this.paths.getFirst();
-				this.currentPathIndex = Integer.valueOf(0);
+				this.currentPathIndex = 0;
 			} else {
 				currentPath = this.paths.get(this.currentPathIndex);				
 				this.currentPathIndex += 1;
@@ -84,10 +69,14 @@ public class Goblin implements Minion {
 			if (currentPath.getIsGoal() == Boolean.TRUE)
 				player.takeDamage(damage);
 			
-			return;
 		} catch (IndexOutOfBoundsException ex) {
 			ex.printStackTrace();
 		}
+	}
+	
+	@Override
+	public void takeDamage(Integer damage) {
+		this.health -= damage;
 	}
 
 	@Override
@@ -103,5 +92,15 @@ public class Goblin implements Minion {
 	@Override
 	public Integer getDamage() {
 		return this.damage;
+	}
+	
+	@Override
+	public Integer getX() {
+		return this.x;
+	}
+	
+	@Override
+	public Integer getY() {
+		return this.y;
 	}
 }
