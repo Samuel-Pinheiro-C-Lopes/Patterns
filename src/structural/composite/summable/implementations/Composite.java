@@ -1,9 +1,9 @@
-package structural.composite.implementations;
+package structural.composite.summable.implementations;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import structural.composite.interfaces.Component;
+import structural.composite.summable.interfaces.Component;
 
 public class Composite implements Component {
 	private final List<Component> children;

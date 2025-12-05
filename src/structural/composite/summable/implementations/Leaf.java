@@ -1,6 +1,6 @@
-package structural.composite.implementations;
+package structural.composite.summable.implementations;
 
-import structural.composite.interfaces.Component;
+import structural.composite.summable.interfaces.Component;
 
 public class Leaf implements Component {
 	private final Integer cost;

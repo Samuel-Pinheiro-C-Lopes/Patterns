@@ -1,8 +1,8 @@
-package structural.composite;
+package structural.composite.summable;
 
-import structural.composite.implementations.Composite;
-import structural.composite.implementations.Leaf;
-import structural.composite.interfaces.Component;
+import structural.composite.summable.implementations.Composite;
+import structural.composite.summable.implementations.Leaf;
+import structural.composite.summable.interfaces.Component;
 
 public class Main {
 	private static void init(final Component component) {
