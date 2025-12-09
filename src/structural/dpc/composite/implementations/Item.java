@@ -27,5 +27,5 @@ public class Item implements Equippable{
 	public Integer getDefenceReceived() {
 		return defence;
 	}
-
 }
+

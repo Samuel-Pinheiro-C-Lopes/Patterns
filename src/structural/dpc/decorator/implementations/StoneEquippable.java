@@ -29,3 +29,5 @@ public class StoneEquippable implements Equippable {
 		return this.equippable.getPrice() / 2;
 	}
 }
+
+

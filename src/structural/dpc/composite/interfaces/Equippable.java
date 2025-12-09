@@ -6,7 +6,9 @@ public interface Equippable {
 	Integer getDefenceReceived();
 	Integer getPrice();
 	
-	default Boolean canBeEquipped(final Player player) {
+	default Boolean buy(final Player player) {
 		return Boolean.TRUE;
 	}
 }
+
+

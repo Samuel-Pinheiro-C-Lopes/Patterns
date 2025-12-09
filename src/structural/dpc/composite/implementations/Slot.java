@@ -9,6 +9,8 @@ public class Slot implements Equippable {
 	private final List<Equippable> equippables;
 	private Integer level = Integer.valueOf(0);
 	private Integer price = Integer.valueOf(0);
+	private Integer damage = Integer.valueOf(0);
+	private Integer defense = Integer.valueOf(0);
 	
 	public Slot() {
 		this.equippables = new ArrayList<Equippable>();
@@ -41,7 +43,7 @@ public class Slot implements Equippable {
 	
 	@Override
 	public Integer getDamageDealt() {
-		Integer damage = this.level;
+		Integer damage = this.damage;
 		
 		for (final Equippable equippable : this.equippables)
 			damage += equippable.getDamageDealt();
@@ -51,12 +53,13 @@ public class Slot implements Equippable {
 
 	@Override
 	public Integer getDefenceReceived() {
-		Integer defence = this.level;
+		Integer defence = this.defense;
 		
 		for (final Equippable equippable : this.equippables)
 			defence += equippable.getDefenceReceived();
 		
 		return defence;
 	}
-
 }
+
+ 
