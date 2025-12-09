@@ -6,6 +6,7 @@ import structural.decorator.interfaces.Component;
 public class ConcreteComponent implements Component {
 	@Override
 	public String alterText(String text) {
-		return text.replace(" ", "");
+		return text.replaceAll("\\s", "");
 	}
 }
+

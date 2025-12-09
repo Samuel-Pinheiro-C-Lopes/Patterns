@@ -3,7 +3,7 @@ package structural.decorator.implementations;
 import structural.decorator.interfaces.Component;
 import structural.decorator.interfaces.Decorator;
 
-/* removes all occurrences of A, B, C and D */
+/* removes all occurrences of A, B and C */
 public class RemoveABCDecorator extends Decorator {
 	public RemoveABCDecorator(Component component) {
 		super(component);
@@ -11,7 +11,7 @@ public class RemoveABCDecorator extends Decorator {
 
 	@Override
 	public String alterText(String text) {
-		return this.component.alterText(text).replaceAll("[ABCD]", "");
+		return this.component.alterText(text).replaceAll("[ABC]", "");
 	}
 
 }
